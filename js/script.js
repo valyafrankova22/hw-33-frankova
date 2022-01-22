@@ -1,7 +1,7 @@
 (function () {
     const form = document.querySelector(`.form`);
 
-    function formValue (event) {
+    form.addEventListener(`submit`, function(event){
         event.preventDefault();
         validation();
         const formData = new FormData(form);
@@ -9,8 +9,8 @@
 
         createElement(values);
         form.reset();
-    }
-    form.addEventListener(`submit`, formValue);
+    })
+
 
     function createElement(elementData) {
         const div = document.createElement(`div`);
